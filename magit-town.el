@@ -35,7 +35,7 @@
   :group 'magit)
 
 ;;;###autoload (autoload 'magit-town-dispatch "magit-town" nil t)
-(define-transient-command magit-town-dispatch ()
+(transient-define-prefix magit-town-dispatch ()
   "Dispatch a git town command."
   [["Development Workflow"
     ("d h" "hack" magit-town-hack)
@@ -63,7 +63,7 @@
   (magit-town-run "sync"))
 
 ;;;###autoload
-(defun magit-town-hack ()
+(defun magit-town-hack (feature-name)
   "Cuts a new up-to-date feature branch off the main branch."
   (interactive "sFeature Name: ")
   (magit-town-run "hack" feature-name))
