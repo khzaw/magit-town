@@ -125,9 +125,12 @@
 ;;;###autoload
 (eval-after-load 'magit
   '(progn
+     ;; Add to magit status buffer with comma key
      (define-key magit-mode-map "," 'magit-town-dispatch)
-     (transient-append-suffix 'magit-dispatch "%"
-       '("," "Town" magit-town-dispatch))))
+     ;; Add as a separate section in the main magit menu
+     (transient-append-suffix 'magit-dispatch '(0)
+       [["Town Commands"
+         ("," "Town" magit-town-dispatch)]])))
 
 (provide 'magit-town)
 ;;; magit-town.el ends here
