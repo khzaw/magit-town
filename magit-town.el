@@ -5,7 +5,7 @@
 ;; Author: Nathan Cox <tsuujin@icloud.com>
 ;; URL: http://github.com/natecox/magit-town
 ;; Version: 19.4.1
-;; Package-Requires: ((emacs "24"))
+;; Package-Requires: ((emacs "25.1") (transient "0.5.0") (magit "3.0.0"))
 ;; Keywords: vc, tools
 
 ;; This program is free software; you can redistribute it and/or modify
@@ -65,7 +65,7 @@
 ;;;###autoload
 (defun magit-town-hack ()
   "Cuts a new up-to-date feature branch off the main branch."
-  (interactive "sFeature Name")
+  (interactive "sFeature Name: ")
   (magit-town-run "hack" feature-name))
 
 ;;;###autoload
